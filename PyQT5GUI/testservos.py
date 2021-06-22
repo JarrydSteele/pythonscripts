@@ -19,6 +19,7 @@ from pymavlink import mavutil
 MAVLINK_DIALECT = "ardupilotmega"
 MAVLINK20 = 1
 
+
 mavutil.set_dialect("ardupilotmega")
 
 servo = []
