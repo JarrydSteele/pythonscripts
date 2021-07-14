@@ -14,7 +14,7 @@ servo = []
 for x in range(8):
     servo.append(0)
 
-connection = '/dev/ttyACM0'       #'/dev/my_radio' '/dev/my_pixhawk'
+connection = '/dev/ttyACM2'       #'/dev/my_radio' '/dev/my_pixhawk'
 
 def PrintServos():
     print ("Servo1:  %s" % servo[0])
@@ -25,14 +25,14 @@ def PrintServos():
     print ("Servo6:  %s" % servo[5])
     print ("Servo7:  %s" % servo[6])
     print ("Servo8:  %s" % servo[7])
-    print ("Servo9:  %s" % servo[8])
-    print ("Servo10: %s" % servo[9])
-    print ("Servo11: %s" % servo[10])
-    print ("Servo12: %s" % servo[11])
-    print ("Servo13: %s" % servo[12])
-    print ("Servo14: %s" % servo[13])
-    #print "Servo15: %s" % servo[14])
-    #print "Servo16: %s" % servo[15])
+    # print ("Servo9:  %s" % servo[8])
+    # print ("Servo10: %s" % servo[9])
+    # print ("Servo11: %s" % servo[10])
+    # print ("Servo12: %s" % servo[11])
+    # print ("Servo13: %s" % servo[12])
+    # print ("Servo14: %s" % servo[13])
+    # print ("Servo15: %s" % servo[14])
+    # print ("Servo16: %s" % servo[15])
 
 print ("Start simulator (HITL)")
 
