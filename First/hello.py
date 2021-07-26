@@ -1,5 +1,5 @@
-import ipywidgets as widgets
-from IPython.display import display
+#import ipywidgets as widgets
+#from IPython.display import display
 import time
 
 #w = widgets.IntSlider()

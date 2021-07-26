@@ -14,7 +14,7 @@ servo = []
 for x in range(8):
     servo.append(0)
 
-connection = '/dev/ttyACM2'       #'/dev/my_radio' '/dev/my_pixhawk'
+connection = '/dev/my_pixhawk4.1'       #'/dev/my_radio' '/dev/my_pixhawk'
 
 def PrintServos():
     print ("Servo1:  %s" % servo[0])
