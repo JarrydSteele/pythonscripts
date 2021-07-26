@@ -1,0 +1,5 @@
+SUBSYSTEM=="tty", ATTRS{serial}=="41003E001351343334363532", SYMLINK+="my_pixhawk1"
+SUBSYSTEM=="tty", ATTRS{serial}=="DN038RD9", SYMLINK+="my_radio1"
+SUBSYSTEM=="tty", ATTRS{serial}=="DN0393B6", SYMLINK+="my_radio2"
+SUBSYSTEM=="tty", ATTRS{serial}=="38002A001951393038333432", SYMLINK+="my_pixhawk4.1"
+SUBSYSTEM=="tty", ATTRS{serial}=="300028000C50564241343220", SYMLINK+="my_pixhawk4.2"
