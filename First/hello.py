@@ -7,7 +7,7 @@ import time
 
 #display(w)
 
-print ("Hello, World! (.py)")
+#print ("Hello, World! (.py)")
 print ("Sleep for 10 seconds...")
 time.sleep(10)
-print ("Good Morning!")
+print ("Finished 10 Seconds")

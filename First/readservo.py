@@ -1,7 +1,5 @@
 # Import DroneKit-Python
 
-MAVLINK20 = 1
-
 from dronekit import connect, VehicleMode, Command
 import time
 from pymavlink.dialects.v20 import ardupilotmega
