@@ -8,26 +8,11 @@ import random
 from PyQt5 import QtWidgets, uic
 from readservosGUI import *
 
-# Import DroneKit-Python
-
-#from dronekit import Vehicle, connect, VehicleMode, Command
-from dronekit import *
-#import dronekit
-from pymavlink.dialects.v20 import *
-from pymavlink import mavutil
-
-MAVLINK_DIALECT = "ardupilotmega"
-MAVLINK20 = 1
-
-
-mavutil.set_dialect("ardupilotmega")
 
 servo = []
 
 for x in range(16):
     servo.append(0)
-
-vehicle = None
 
 class Main(QtWidgets.QMainWindow):
     def __init__(self):
@@ -62,69 +47,17 @@ def PrintServos():
     print ("Servo16: %s" % servo[15])
 
 def ConnectPressed():   
-    global vehicle
 
     print ('Connect Button Pressed')
-    
     window.ui.btnConnect.setText("Connecting")
+    window.ui.btnConnect.update
 
+    time.sleep(5)
 
-    #connection = '/dev/my_radio1'       #'/dev/my_radio1' '/dev/my_pixhawk'
-    if window.ui.cmbConnect.currentText() == "Pixhawk":
-        connection = '/dev/my_pixhawk'
-    elif window.ui.cmbConnect.currentText() == "Radio1":
-        connection = '/dev/my_radio1'
-    elif window.ui.cmbConnect.currentText() == "Radio2":
-        connection = '/dev/my_radio2'
-
-    
-    #connection = '/dev/my_radio1'       #'/dev/my_radio1' '/dev/my_pixhawk'
-
-    print ("Start simulator (HITL)")
-
-    # Connect to the Vehicle. '/dev/ttyACM0'
-    print ("Connecting to vehicle on: %s" % connection)
-
-    vehicle = connect(connection, baud=57600, wait_ready=True)
-
-    # Force Dronekit to use Mavlink v2.0
-    vehicle._master.first_byte = True
-
-
-    # Get some vehicle attributes (state)
-    print ("Get some vehicle attribute values:")
-    print (" GPS: %s" % vehicle.gps_0)
-    print (" Battery: %s" % vehicle.battery)
-    print (" Last Heartbeat: %s" % vehicle.last_heartbeat)
-    print (" Is Armable?: %s" % vehicle.is_armable)
-    print (" System status: %s" % vehicle.system_status.state)
-    print (" Mode: %s" % vehicle.mode.name)  # settable
-
-
-
-    @vehicle.on_message('SERVO_OUTPUT_RAW')
-    def listener(self, name, message):
-        #print(message)
-        servo[0] = int(message.servo1_raw)/20
-        servo[1] = int(message.servo2_raw)/20
-        servo[2] = int(message.servo3_raw)/20
-        servo[3] = int(message.servo4_raw)/20
-        servo[4] = int(message.servo5_raw)/20
-        servo[5] = int(message.servo6_raw)/20
-        servo[6] = int(message.servo7_raw)/20
-        servo[7] = int(message.servo8_raw)/20
-        servo[8] = int(message.servo9_raw)/20
-        servo[9] = int(message.servo10_raw)/20
-        servo[10] = int(message.servo11_raw)/20
-        servo[11] = int(message.servo12_raw)/20
-        servo[12] = int(message.servo13_raw)/20
-        servo[13] = int(message.servo14_raw)/20
-        servo[14] = int(message.servo15_raw)/20
-        servo[15] = int(message.servo16_raw)/20
-        #PrintServos()
-        UpdateServoSliders()
-        
+    print ('Connected')
     window.ui.btnConnect.setText("Connected")
+
+    RandomSliders()
 
 def PrintServos():
     print ("Servo 1:   %s" % servo[0])
@@ -165,31 +98,17 @@ def UpdateServoSliders():
 
 def DisconnectPressed():
     
-    window.ui.horizontalSlider_1.setSliderPosition(0)
-    window.ui.horizontalSlider_2.setSliderPosition(0)
-    window.ui.horizontalSlider_3.setSliderPosition(0)
-    window.ui.horizontalSlider_4.setSliderPosition(0)
-    window.ui.horizontalSlider_5.setSliderPosition(0)
-    window.ui.horizontalSlider_6.setSliderPosition(0)
-    window.ui.horizontalSlider_7.setSliderPosition(0)
-    window.ui.horizontalSlider_8.setSliderPosition(0)
-    window.ui.horizontalSlider_9.setSliderPosition(0)
-    window.ui.horizontalSlider_10.setSliderPosition(0)
-    window.ui.horizontalSlider_11.setSliderPosition(0)
-    window.ui.horizontalSlider_12.setSliderPosition(0)
-    window.ui.horizontalSlider_13.setSliderPosition(0)
-    window.ui.horizontalSlider_14.setSliderPosition(0)
-    window.ui.horizontalSlider_15.setSliderPosition(0)
-    window.ui.horizontalSlider_16.setSliderPosition(0)
+    ZeroSliders()
 
     window.ui.btnConnect.setText("Connect")
-    
-    vehicle.close()
 
     # Shut down simulator
     print ("Completed")
 
 def MakeDo():
+    RandomSliders()
+
+def RandomSliders():
     window.ui.horizontalSlider_1.setSliderPosition(random.randint(0,100))
     window.ui.horizontalSlider_2.setSliderPosition(random.randint(0,100))
     window.ui.horizontalSlider_3.setSliderPosition(random.randint(0,100))
@@ -222,6 +141,40 @@ def MakeDo():
     window.ui.horizontalSlider_46.setSliderPosition(random.randint(0,100))
     window.ui.horizontalSlider_47.setSliderPosition(random.randint(0,100))
     window.ui.horizontalSlider_48.setSliderPosition(random.randint(0,100))
+
+def ZeroSliders():
+    window.ui.horizontalSlider_1.setSliderPosition(0)
+    window.ui.horizontalSlider_2.setSliderPosition(0)
+    window.ui.horizontalSlider_3.setSliderPosition(0)
+    window.ui.horizontalSlider_4.setSliderPosition(0)
+    window.ui.horizontalSlider_5.setSliderPosition(0)
+    window.ui.horizontalSlider_6.setSliderPosition(0)
+    window.ui.horizontalSlider_7.setSliderPosition(0)
+    window.ui.horizontalSlider_8.setSliderPosition(0)
+    window.ui.horizontalSlider_9.setSliderPosition(0)
+    window.ui.horizontalSlider_10.setSliderPosition(0)
+    window.ui.horizontalSlider_11.setSliderPosition(0)
+    window.ui.horizontalSlider_12.setSliderPosition(0)
+    window.ui.horizontalSlider_13.setSliderPosition(0)
+    window.ui.horizontalSlider_14.setSliderPosition(0)
+    window.ui.horizontalSlider_15.setSliderPosition(0)
+    window.ui.horizontalSlider_16.setSliderPosition(0)
+    window.ui.horizontalSlider_33.setSliderPosition(0)
+    window.ui.horizontalSlider_34.setSliderPosition(0)
+    window.ui.horizontalSlider_35.setSliderPosition(0)
+    window.ui.horizontalSlider_36.setSliderPosition(0)
+    window.ui.horizontalSlider_37.setSliderPosition(0)
+    window.ui.horizontalSlider_38.setSliderPosition(0)
+    window.ui.horizontalSlider_39.setSliderPosition(0)
+    window.ui.horizontalSlider_40.setSliderPosition(0)
+    window.ui.horizontalSlider_41.setSliderPosition(0)
+    window.ui.horizontalSlider_42.setSliderPosition(0)
+    window.ui.horizontalSlider_43.setSliderPosition(0)
+    window.ui.horizontalSlider_44.setSliderPosition(0)
+    window.ui.horizontalSlider_45.setSliderPosition(0)
+    window.ui.horizontalSlider_46.setSliderPosition(0)
+    window.ui.horizontalSlider_47.setSliderPosition(0)
+    window.ui.horizontalSlider_48.setSliderPosition(0)
 
 def QuitProgram():
     # Shut down simulator

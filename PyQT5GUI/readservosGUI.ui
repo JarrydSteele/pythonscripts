@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>1000</width>
+    <height>800</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -21,14 +21,14 @@
   </property>
   <property name="minimumSize">
    <size>
-    <width>800</width>
-    <height>600</height>
+    <width>1000</width>
+    <height>800</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>800</width>
-    <height>600</height>
+    <width>1000</width>
+    <height>800</height>
    </size>
   </property>
   <property name="palette">
@@ -489,9 +489,9 @@
    <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
-      <x>70</x>
-      <y>70</y>
-      <width>171</width>
+      <x>20</x>
+      <y>130</y>
+      <width>131</width>
       <height>166</height>
      </rect>
     </property>
@@ -545,12 +545,12 @@
      </item>
     </layout>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
-      <x>310</x>
-      <y>50</y>
-      <width>451</width>
+      <x>200</x>
+      <y>90</y>
+      <width>771</width>
       <height>471</height>
      </rect>
     </property>
@@ -721,7 +721,7 @@
           </font>
          </property>
          <property name="text">
-          <string>Servo Outputs:</string>
+          <string>FC 1 Servo Outputs:</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
@@ -925,6 +925,241 @@
        </item>
        <item>
         <widget class="QSlider" name="horizontalSlider_16">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="cursor">
+          <cursorShape>ForbiddenCursor</cursorShape>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_5">
+       <item>
+        <widget class="QLabel" name="label_19">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>14</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>FC 2 Servo Outputs:</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QSlider" name="horizontalSlider_33">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="cursor">
+          <cursorShape>ForbiddenCursor</cursorShape>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QSlider" name="horizontalSlider_34">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="cursor">
+          <cursorShape>ForbiddenCursor</cursorShape>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QSlider" name="horizontalSlider_35">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="cursor">
+          <cursorShape>ForbiddenCursor</cursorShape>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QSlider" name="horizontalSlider_36">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="cursor">
+          <cursorShape>ForbiddenCursor</cursorShape>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QSlider" name="horizontalSlider_37">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="cursor">
+          <cursorShape>ForbiddenCursor</cursorShape>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QSlider" name="horizontalSlider_38">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="cursor">
+          <cursorShape>ForbiddenCursor</cursorShape>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QSlider" name="horizontalSlider_39">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="cursor">
+          <cursorShape>ForbiddenCursor</cursorShape>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QSlider" name="horizontalSlider_40">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="cursor">
+          <cursorShape>ForbiddenCursor</cursorShape>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QSlider" name="horizontalSlider_41">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="cursor">
+          <cursorShape>ForbiddenCursor</cursorShape>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QSlider" name="horizontalSlider_42">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="cursor">
+          <cursorShape>ForbiddenCursor</cursorShape>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QSlider" name="horizontalSlider_43">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="cursor">
+          <cursorShape>ForbiddenCursor</cursorShape>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QSlider" name="horizontalSlider_44">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="cursor">
+          <cursorShape>ForbiddenCursor</cursorShape>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QSlider" name="horizontalSlider_45">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="cursor">
+          <cursorShape>ForbiddenCursor</cursorShape>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QSlider" name="horizontalSlider_46">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="cursor">
+          <cursorShape>ForbiddenCursor</cursorShape>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QSlider" name="horizontalSlider_47">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="cursor">
+          <cursorShape>ForbiddenCursor</cursorShape>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QSlider" name="horizontalSlider_48">
          <property name="enabled">
           <bool>true</bool>
          </property>

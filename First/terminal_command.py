@@ -14,10 +14,10 @@ def wait_10_seconds():
     subprocess.run(['python3', 'hello.py'])
     #print ("Finished 10 Seconds")
 
-def wait_5_seconds():
-    print ("Sleep for 5 seconds...")
+def wait_15_seconds():
+    print ("Sleep for 15 seconds...")
     time.sleep(15)
-    print ("Finished 5 Seconds")
+    print ("Finished 15 Seconds")
 
 def telem_forward_1():
     print("Starting Telem Forwarding...")
@@ -37,7 +37,7 @@ test_thread_1 = Thread(target=wait_10_seconds, args=())
 test_thread_1.daemon = True
 test_thread_1.start()
 
-test_thread_2 = Thread(target=wait_5_seconds, args=())
+test_thread_2 = Thread(target=wait_15_seconds, args=())
 test_thread_2.daemon = True
 test_thread_2.start()
 
