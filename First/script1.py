@@ -1,4 +1,4 @@
-#print("mavproxy.py --master=/dev/my_pixhawk4.1 --out=/dev/my_radio2")
+#print("mavproxy.py --master=/dev/pixhawk4.1 --out=/dev/radio2")
 
 import time
 

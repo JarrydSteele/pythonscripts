@@ -31,8 +31,8 @@ class dk_vehicle(Vehicle):
         print (" System status: %s" % self.system_status.state)
         print (" Mode: %s" % self.mode.name)
         
-connection1 = "/dev/my_pixhawk4.1"
-connection2 = "/dev/my_pixhawk4.2"
+connection1 = "/dev/pixhawk4.1"
+connection2 = "/dev/pixhawk4.2"
 
 fc_1 = dk_vehicle
 

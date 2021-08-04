@@ -21,7 +21,7 @@ def wait_15_seconds():
 
 def telem_forward_1():
     print("Starting Telem Forwarding...")
-    subprocess.run(['mavproxy.py', '--master=/dev/my_pixhawk4.1', '--out=/dev/my_radio2'])
+    subprocess.run(['mavproxy.py', '--master=/dev/pixhawk4.1', '--out=/dev/radio2'])
     if stop_threads:
         exit()
 

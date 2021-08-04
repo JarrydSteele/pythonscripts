@@ -69,16 +69,16 @@ def ConnectPressed():
     window.ui.btnConnect.setText("Connecting")
 
 
-    #connection = '/dev/my_radio1'       #'/dev/my_radio1' '/dev/my_pixhawk'
+    #connection = '/dev/radio1'       #'/dev/radio1' '/dev/pixhawk'
     if window.ui.cmbConnect.currentText() == "Pixhawk":
-        connection = '/dev/my_pixhawk'
+        connection = '/dev/pixhawk'
     elif window.ui.cmbConnect.currentText() == "Radio1":
-        connection = '/dev/my_radio1'
+        connection = '/dev/radio1'
     elif window.ui.cmbConnect.currentText() == "Radio2":
-        connection = '/dev/my_radio2'
+        connection = '/dev/radio2'
 
     
-    #connection = '/dev/my_radio1'       #'/dev/my_radio1' '/dev/my_pixhawk'
+    #connection = '/dev/radio1'       #'/dev/radio1' '/dev/pixhawk'
 
     print ("Start simulator (HITL)")
 

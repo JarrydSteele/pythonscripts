@@ -50,7 +50,7 @@ def ConnectPressed():
 
     print ('Connect Button Pressed')
     window.ui.btnConnect.setText("Connecting")
-    window.ui.btnConnect.update
+    window.ui.btnConnect.repaint()
 
     time.sleep(5)
 

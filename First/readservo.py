@@ -12,7 +12,7 @@ servo = []
 for x in range(8):
     servo.append(0)
 
-connection = '/dev/my_pixhawk4.1'       #'/dev/my_radio' '/dev/my_pixhawk'
+connection = '/dev/pixhawk4.1'       #'/dev/radio' '/dev/pixhawk4.1'
 
 def PrintServos():
     print ("Servo1:  %s" % servo[0])
@@ -57,7 +57,7 @@ print (" Mode: %s" % vehicle.mode.name)  # settable
 
 @vehicle.on_message('SERVO_OUTPUT_RAW')
 def listener(self, name, message):
-    print(message);   
+    print(message);    
 
 # @vehicle.on_message('*')
 # def listener(self, name, message):

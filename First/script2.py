@@ -1,1 +1,1 @@
-#print("mavproxy.py --master=/dev/my_pixhawk4.2 --out=/dev/my_radio2")
+#print("mavproxy.py --master=/dev/pixhawk4.2 --out=/dev/radio2")

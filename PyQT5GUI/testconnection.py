@@ -24,7 +24,7 @@ for x in range(16):
 
 vehicle = None
     
-connection = '/dev/ttyACM0'       #'/dev/my_radio' '/dev/my_pixhawk'
+connection = '/dev/ttyACM0'       #'/dev/radio' '/dev/pixhawk'
 
 print ("Start simulator (HITL)")
 
