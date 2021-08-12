@@ -7,7 +7,7 @@ stop_threads = False
 
 def get_teensy_serial():
     print("Starting Telem Forwarding...")
-    global teensy 
+    global teensy
     teensy = serial.Serial('/dev/teensy4.1')       # open serial port
     print(teensy.name)                             # check which port was really used
     while(True):
@@ -35,6 +35,7 @@ def switch():
         switch()
 
     elif option == '3':
+        global int_s
         print(int_s)
         switch()
     
