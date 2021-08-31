@@ -6,7 +6,14 @@ import time
 from pymavlink.dialects.v20 import ardupilotmega
 from pymavlink import mavutil
 
+from threading import Thread
+import serial
+
 mavutil.set_dialect("ardupilotmega")
+
+MAVLINK20 = 1
+
+stop_threads = False                                                # variable used to cancel any threads
 
 class DKVehicle:
 
@@ -52,6 +59,17 @@ class DKVehicle:
         print ("Servo14: %s" % self.servo_output[13])
         print ("Servo15: %s" % self.servo_output[14])
         print ("Servo16: %s" % self.servo_output[15])
+    
+    def print_channels(self):
+        print(" Ch1: %s" % self.vehicle.channels['1'])
+        print(" Ch2: %s" % self.vehicle.channels['2'])
+        print(" Ch3: %s" % self.vehicle.channels['3'])
+        print(" Ch4: %s" % self.vehicle.channels['4'])
+        print(" Ch5: %s" % self.vehicle.channels['5'])
+        print(" Ch6: %s" % self.vehicle.channels['6'])
+        print(" Ch7: %s" % self.vehicle.channels['7'])
+        print(" Ch8: %s" % self.vehicle.channels['8'])
+
                 
         
 fc_1 = DKVehicle('/dev/pixhawk4.1')
@@ -114,6 +132,50 @@ def listener(self, name, message):
 
 #user_input = input("State a command: ")
 
+def override_servo_1():                                            # get serial data from teensy
+    while(True):
+        pins= [1,2,3,4,5,6,7,8,9,10,11,12]
+        msg=[]
+        for x in pins:
+            temp = fc_1.vehicle.message_factory.command_long_encode(
+                0, 0,                                   # target_system, target_component
+                mavutil.mavlink.MAV_CMD_DO_SET_SERVO,   #command
+                0,                                      #confirmation
+                x ,                                     # param 1, servo No
+                1000,                                   # param 2, pwm
+                0, 0, 0, 0, 0)                          # param 3 ~ 7 not used
+            msg.append(temp)
+    
+        # send command to vehicle
+        for i in msg:
+            fc_1.vehicle.send_mavlink(i)
+        
+        if stop_threads:
+            print("stop_threads = true")
+            break
+
+def override_servo_2():                                            # get serial data from teensy
+    while(True):
+        pins= [1,2,3,4,5,6,7,8,9,10,11,12]
+        msg=[]
+        for x in pins:
+            temp = fc_2.vehicle.message_factory.command_long_encode(
+                0, 0,                                   # target_system, target_component
+                mavutil.mavlink.MAV_CMD_DO_SET_SERVO,   #command
+                0,                                      #confirmation
+                x ,                                     # param 1, servo No
+                1000,                                   # param 2, pwm
+                0, 0, 0, 0, 0)                          # param 3 ~ 7 not used
+            msg.append(temp)
+    
+        # send command to vehicle
+        for i in msg:
+            fc_2.vehicle.send_mavlink(i)
+        
+        if stop_threads:
+            print("stop_threads = true")
+            break
+
 def switch():
     option = input("Enter your option ('e' to exit): ")
 
@@ -121,19 +183,113 @@ def switch():
         print("Closing Vehicles and Exiting Program")
         fc_1.vehicle.close()
         fc_2.vehicle.close()
-        time.sleep(2)
+        time.sleep(1)
         return
  
     elif option == '1':
         fc_1.printstats()
         fc_1.print_servos()
         switch()
- 
+    
     elif option == '2':
         fc_2.printstats()
         fc_2.print_servos()
         switch()
  
+    elif option == '3':
+        # fc_1.vehicle.channels.overrides['1'] = 200
+        # fc_1.vehicle.channels.overrides['2'] = 200
+        # fc_1.vehicle.channels.overrides['3'] = 200
+        # fc_1.vehicle.channels.overrides['4'] = 200
+
+        pins= [1,2,3,4,5,6,7,8,9,10,11,12]
+        msg=[]
+        for x in pins:
+            temp = fc_1.vehicle.message_factory.command_long_encode(
+                0, 0,                                   # target_system, target_component
+                mavutil.mavlink.MAV_CMD_DO_SET_SERVO,   #command
+                0,                                      #confirmation
+                x ,                                     # param 1, servo No
+                1600,                                   # param 2, pwm
+                0, 0, 0, 0, 0)                          # param 3 ~ 7 not used
+            msg.append(temp)
+            print("Pin %s changed to 1600" % x)
+    
+        # send command to vehicle
+        for i in msg:
+            fc_1.vehicle.send_mavlink(i)
+            print(i)
+
+        fc_1.print_servos()
+
+        switch()
+    
+    elif option == '4':
+        # fc_1.vehicle.channels.overrides['1'] = 200
+        # fc_1.vehicle.channels.overrides['2'] = 200
+        # fc_1.vehicle.channels.overrides['3'] = 200
+        # fc_1.vehicle.channels.overrides['4'] = 200
+
+        pins= [1,2,3,4,5,6,7,8,9,10,11,12]
+        msg=[]
+        for x in pins:
+            temp = fc_2.vehicle.message_factory.command_long_encode(
+                0, 0,                                   # target_system, target_component
+                mavutil.mavlink.MAV_CMD_DO_SET_SERVO,   #command
+                0,                                      #confirmation
+                x ,                                     # param 1, servo No
+                1600,                                   # param 2, pwm
+                0, 0, 0, 0, 0)                          # param 3 ~ 7 not used
+            msg.append(temp)
+            print("Pin %s changed to 1600" % x)
+    
+        # send command to vehicle
+        for i in msg:
+            fc_2.vehicle.send_mavlink(i)
+            print(i)
+
+        fc_2.print_servos()
+
+        switch()
+    
+    elif option == '5':
+        fc_1.printstats()
+        fc_1.vehicle.mode = VehicleMode('STABILIZE')
+        fc_1.printstats()
+        switch()
+    
+    elif option == '6':
+        fc_2.printstats()
+        fc_2.vehicle.mode = VehicleMode('STABILIZE')
+        fc_2.printstats()
+        switch()
+    
+    elif option == '7':
+        fc_1.printstats()
+        fc_1.vehicle.mode = VehicleMode('GUIDED')
+        fc_1.printstats()
+        switch()
+    
+    elif option == '8':
+        fc_2.printstats()
+        fc_2.vehicle.mode = VehicleMode('GUIDED')
+        fc_2.printstats()
+        switch()
+    
+    elif option == '9':
+        global override_servo_1_thread
+        override_servo_1_thread = Thread(target=override_servo_1, args=())
+        override_servo_1_thread.daemon = True
+        override_servo_1_thread.start()
+        switch()
+    
+    elif option == '10':
+        global override_servo_2_thread
+        override_servo_2_thread = Thread(target=override_servo_2, args=())
+        override_servo_2_thread.daemon = True
+        override_servo_2_thread.start()
+        switch()
+
     else:
         print("Incorrect option")
         switch()

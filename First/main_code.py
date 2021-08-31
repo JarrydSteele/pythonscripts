@@ -165,7 +165,6 @@ def switch():
         global stop_threads
         stop_threads = True
         teensy_serial_thread.join()
-        #hi
         switch()
  
     else:
