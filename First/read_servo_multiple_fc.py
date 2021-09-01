@@ -12,7 +12,7 @@ import serial
 mavutil.set_dialect("ardupilotmega")
 
 MAVLINK20 = 1
-
+global stop_threads
 stop_threads = False                                                # variable used to cancel any threads
 
 class DKVehicle:
@@ -142,7 +142,7 @@ def override_servo_1():                                            # get serial 
                 mavutil.mavlink.MAV_CMD_DO_SET_SERVO,   #command
                 0,                                      #confirmation
                 x ,                                     # param 1, servo No
-                1000,                                   # param 2, pwm
+                1200,                                   # param 2, pwm
                 0, 0, 0, 0, 0)                          # param 3 ~ 7 not used
             msg.append(temp)
     
@@ -151,7 +151,7 @@ def override_servo_1():                                            # get serial 
             fc_1.vehicle.send_mavlink(i)
         
         if stop_threads:
-            print("stop_threads = true")
+            print("override_servo_1: stop_threads = true")
             break
 
 def override_servo_2():                                            # get serial data from teensy
@@ -164,7 +164,7 @@ def override_servo_2():                                            # get serial 
                 mavutil.mavlink.MAV_CMD_DO_SET_SERVO,   #command
                 0,                                      #confirmation
                 x ,                                     # param 1, servo No
-                1000,                                   # param 2, pwm
+                1200,                                   # param 2, pwm
                 0, 0, 0, 0, 0)                          # param 3 ~ 7 not used
             msg.append(temp)
     
@@ -173,7 +173,7 @@ def override_servo_2():                                            # get serial 
             fc_2.vehicle.send_mavlink(i)
         
         if stop_threads:
-            print("stop_threads = true")
+            print("override_servo_2: stop_threads = true")
             break
 
 def switch():
@@ -254,29 +254,31 @@ def switch():
     
     elif option == '5':
         fc_1.printstats()
-        fc_1.vehicle.mode = VehicleMode('STABILIZE')
+        fc_1.vehicle.mode = VehicleMode('QHOVER')
         fc_1.printstats()
         switch()
     
     elif option == '6':
         fc_2.printstats()
-        fc_2.vehicle.mode = VehicleMode('STABILIZE')
+        fc_2.vehicle.mode = VehicleMode('QHOVER')
         fc_2.printstats()
         switch()
     
     elif option == '7':
         fc_1.printstats()
-        fc_1.vehicle.mode = VehicleMode('GUIDED')
+        fc_1.vehicle.mode = VehicleMode('QACRO')
         fc_1.printstats()
         switch()
     
     elif option == '8':
         fc_2.printstats()
-        fc_2.vehicle.mode = VehicleMode('GUIDED')
+        fc_2.vehicle.mode = VehicleMode('QACRO')
         fc_2.printstats()
         switch()
     
     elif option == '9':
+        global stop_threads
+        stop_threads = False
         global override_servo_1_thread
         override_servo_1_thread = Thread(target=override_servo_1, args=())
         override_servo_1_thread.daemon = True
@@ -284,10 +286,15 @@ def switch():
         switch()
     
     elif option == '10':
+        stop_threads = False
         global override_servo_2_thread
         override_servo_2_thread = Thread(target=override_servo_2, args=())
         override_servo_2_thread.daemon = True
         override_servo_2_thread.start()
+        switch()
+
+    elif option == 'k':
+        stop_threads = True
         switch()
 
     else:
