@@ -161,7 +161,7 @@ def override_servo_2():                                            # get serial 
         for x in pins:
             temp = fc_2.vehicle.message_factory.command_long_encode(
                 0, 0,                                   # target_system, target_component
-                mavutil.mavlink.MAV_CMD_DO_SET_SERVO,   #command
+                183,   #command
                 0,                                      #confirmation
                 x ,                                     # param 1, servo No
                 1200,                                   # param 2, pwm
@@ -207,18 +207,17 @@ def switch():
         for x in pins:
             temp = fc_1.vehicle.message_factory.command_long_encode(
                 0, 0,                                   # target_system, target_component
-                mavutil.mavlink.MAV_CMD_DO_SET_SERVO,   #command
+                183,   #command
                 0,                                      #confirmation
                 x ,                                     # param 1, servo No
                 1600,                                   # param 2, pwm
                 0, 0, 0, 0, 0)                          # param 3 ~ 7 not used
-            msg.append(temp)
+            fc_1.vehicle.send_mavlink(temp)
+            fc_1.vehicle.flush()
+            print(temp)
             print("Pin %s changed to 1600" % x)
     
         # send command to vehicle
-        for i in msg:
-            fc_1.vehicle.send_mavlink(i)
-            print(i)
 
         fc_1.print_servos()
 
@@ -235,7 +234,7 @@ def switch():
         for x in pins:
             temp = fc_2.vehicle.message_factory.command_long_encode(
                 0, 0,                                   # target_system, target_component
-                mavutil.mavlink.MAV_CMD_DO_SET_SERVO,   #command
+                183,   #command
                 0,                                      #confirmation
                 x ,                                     # param 1, servo No
                 1600,                                   # param 2, pwm
@@ -247,6 +246,8 @@ def switch():
         for i in msg:
             fc_2.vehicle.send_mavlink(i)
             print(i)
+
+        fc_2.vehicle.flush()
 
         fc_2.print_servos()
 
@@ -291,6 +292,14 @@ def switch():
         override_servo_2_thread = Thread(target=override_servo_2, args=())
         override_servo_2_thread.daemon = True
         override_servo_2_thread.start()
+        switch()
+
+    elif option == '11':
+        #global fc_1
+        msg = fc_1.vehicle.message_factory.command_long_encode(0,0,mavutil.mavlink.MAV_CMD_DO_SET_SERVO, 0, 5, 1500, 0, 0, 0, 0, 0)
+        fc_1.vehicle.send_mavlink(msg)
+        fc_1.vehicle.flush()
+
         switch()
 
     elif option == 'k':
