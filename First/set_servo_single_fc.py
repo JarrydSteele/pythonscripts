@@ -126,7 +126,6 @@ class DKVehicle:
         val = self.vehicle.parameters[servo_trim]
         if self.servo_func[str(servo)] == 0:
             val = 0
-            print('Servo: ' + str(servo) + ' is Disabled')
 
         msg = self.vehicle.message_factory.command_long_encode(0, 0, mavutil.mavlink.MAV_CMD_DO_SET_SERVO, 0, servo, val, 0, 0, 0, 0, 0)
         self.vehicle.send_mavlink(msg)
