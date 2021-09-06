@@ -35,6 +35,25 @@ class DKVehicle:
         self.actuator_output = []
         for x in range(16):
             self.actuator_output.append(0)   
+        
+        self.servo_func = {
+            '1': 4,             # Aileron
+            '2': 19,            # Elevator
+            '3': 70,            # Throttle
+            '4': 21,            # Rudder
+            '5': 33,            # Motor1 
+            '6': 34,            # Motor2
+            '7': 35,            # Motor3
+            '8': 36,            # Motor4
+            '9': 0,             # Disabled
+            '10': 0,            # Disabled
+            '11': 0,            # Disabled
+            '12': 0,            # Disabled
+            '13': 0,            # Disabled
+            '14': 0,            # Disabled
+            '15': 0,            # Disabled
+            '16': 0,            # Disabled
+            }
     
     def printstats(self):
         print ("Vehicle: %s" % self.vehicle.version)
@@ -64,10 +83,6 @@ class DKVehicle:
         print ("Servo14: %s" % self.servo_output[13])
         print ("Servo15: %s" % self.servo_output[14])
         print ("Servo16: %s" % self.servo_output[15])
-    
-    def print_actuator(self):
-        for x in range(16):
-            print(" Ch%s: %s" % (x, self.actuator_output[x]))
 
     
     def print_channels(self):
@@ -79,12 +94,55 @@ class DKVehicle:
         print(" Ch6: %s" % self.vehicle.channels['6'])
         print(" Ch7: %s" % self.vehicle.channels['7'])
         print(" Ch8: %s" % self.vehicle.channels['8'])
+    
+    def override_servo(self, servo,val):
+        servo_string = 'SERVO' + str(servo) + '_FUNCTION'
+        self.vehicle.parameters[servo_string]=0
+        
+        msg = self.vehicle.message_factory.command_long_encode(0, 0, mavutil.mavlink.MAV_CMD_DO_SET_SERVO, 0, servo, val, 0, 0, 0, 0, 0)
+        self.vehicle.send_mavlink(msg)
+        
+        #print(msg)
+        
+        self.vehicle.flush()
 
-                
+    def disable_servo(self, servo):
+        servo_string = 'SERVO' + str(servo) + '_FUNCTION'
+        servo_trim = 'SERVO' + str(servo) + '_TRIM'
+        self.vehicle.parameters[servo_string]=0
+        val = self.vehicle.parameters[servo_trim]
+        
+        msg = self.vehicle.message_factory.command_long_encode(0, 0, mavutil.mavlink.MAV_CMD_DO_SET_SERVO, 0, servo, val, 0, 0, 0, 0, 0)
+        self.vehicle.send_mavlink(msg)
+        
+        #print(msg)
+        
+        self.vehicle.flush()
+
+    def enable_servo(self, servo):
+        servo_string = 'SERVO' + str(servo) + '_FUNCTION'
+        servo_trim = 'SERVO' + str(servo) + '_TRIM'
+
+        val = self.vehicle.parameters[servo_trim]
+        if self.servo_func[str(servo)] == 0:
+            val = 0
+            print('Servo: ' + str(servo) + ' is Disabled')
+
+        msg = self.vehicle.message_factory.command_long_encode(0, 0, mavutil.mavlink.MAV_CMD_DO_SET_SERVO, 0, servo, val, 0, 0, 0, 0, 0)
+        self.vehicle.send_mavlink(msg)
+        
+        self.vehicle.parameters[servo_string]=self.servo_func[str(servo)]
+        
+        #print(msg)
+        
+        self.vehicle.flush()
+    
+    def print_servo_functions(self):
+        for servo in range(1,17):
+            servo_string = 'SERVO' + str(servo) + '_FUNCTION'
+            print(servo_string + ': ' + str(self.vehicle.parameters[servo_string]))
         
 fc_1 = DKVehicle('127.0.0.1:14550')
-
-#fc_1.printstats()
 
 @fc_1.vehicle.on_message('SERVO_OUTPUT_RAW')
 def listener(self, name, message):
@@ -105,41 +163,6 @@ def listener(self, name, message):
     fc_1.servo_output[13] = message.servo14_raw
     fc_1.servo_output[14] = message.servo15_raw
     fc_1.servo_output[15] = message.servo16_raw
-    #print("FC_1")
-    #fc_1.print_servos()
-
-@fc_1.vehicle.on_message('ACTUATOR_OUTPUT_STATUS')
-def listener(self, name, message):
-    print(message)
-    for x in range(16):
-        fc_1.actuator_output[x] = message.actuator[x]
-    
-    #print("FC_1")
-    #fc_1.print_servos()
-
-
-# @fc_1.vehicle.on_message('SERVO_OUTPUT_RAW')
-# def listener1(self, name, message):
-#     print("Vehicle 1: %s" % message);   
-
-#user_input = input("State a command: ")
-
-def override_servo(servo,val):
-    servo_string = 'SERVO' + str(servo) + '_FUNCTION'
-    fc_1.vehicle.parameters[servo_string]=0
-    
-    msg = fc_1.vehicle.message_factory.command_long_encode(0, 0, mavutil.mavlink.MAV_CMD_DO_SET_SERVO, 0, servo, val, 0, 0, 0, 0, 0)
-    fc_1.vehicle.send_mavlink(msg)
-    print(msg)
-    fc_1.vehicle.flush()
-
-
-def also_override_servo_1(val):
-    for x in range(1,17):
-        msg = fc_1.vehicle.message_factory.command_long_encode(0, 0, mavutil.mavlink.MAV_CMD_DO_SET_SERVO, 0, x, val, 0, 0, 0, 0, 0)
-        fc_1.vehicle.send_mavlink(msg)
-        print(msg)
-        fc_1.vehicle.flush()
 
 def switch():
     option = input("Enter your option ('e' to exit): ")
@@ -147,7 +170,7 @@ def switch():
     if option == 'e':
         print("Closing Vehicles and Exiting Program")
         fc_1.vehicle.close()
-        time.sleep(1)
+        # time.sleep(1)
         return
  
     elif option == '1':
@@ -160,45 +183,85 @@ def switch():
         switch()
     
     elif option == '3':
+        for x in range(1,17):
+            fc_1.override_servo(x,1800)
+        fc_1.print_servos()
+        switch()
+    
+    elif option == '4':
+        for x in range(1,17):
+            fc_1.override_servo(x,1500)
+        fc_1.print_servos()
+        switch()
+    
+    elif option == '5':
+        for x in range(1,17):
+            fc_1.enable_servo(x)
+        fc_1.print_servos()
+
+        switch()
+
+    elif option == '6':
+        fc_1.print_servo_functions()
+
+        switch()
+
+    elif option == '7':
+        
+        switch()
+
+    elif option == '8':
+        
+        switch()
+
+    elif option == '9':
+        
+        switch()
+    
+    elif option == '10':
+        
+        switch()
+
+    elif option == 'k':
+        stop_threads = True
+        switch()
+    
+    elif option == 'qhover':
         fc_1.printstats()
         fc_1.vehicle.mode = VehicleMode('QHOVER')
         fc_1.printstats()
         switch()
     
-    elif option == '4':
+    elif option == 'qacro':
         fc_1.printstats()
         fc_1.vehicle.mode = VehicleMode('QACRO')
         fc_1.printstats()
         switch()
-    
-    elif option == '5':
+
+    elif option == 'fbwa':
+        fc_1.printstats()
+        fc_1.vehicle.mode = VehicleMode('FBWA')
+        fc_1.printstats()
+        switch()
+
+    elif option == 'fbwb':
+        fc_1.printstats()
+        fc_1.vehicle.mode = VehicleMode('FBWB')
+        fc_1.printstats()
+        switch()
+
+    elif option == 'stabilize':
+        fc_1.printstats()
+        fc_1.vehicle.mode = VehicleMode('STABILIZE')
+        fc_1.printstats()
+        switch()
+        
+    elif option == 'arm':
         fc_1.vehicle.armed = True
         switch()
 
-    elif option == '6':
+    elif option == 'disarm':
         fc_1.vehicle.armed = False
-        switch()
-
-    elif option == '7':
-        for x in range(1,17):
-            override_servo(x,1800)
-        fc_1.print_servos()
-        switch()
-
-    elif option == '8':
-        also_override_servo_1(1500)
-
-        fc_1.print_servos()
-
-        switch()
-
-    elif option == '9':
-        fc_1.print_actuator()
-
-        switch()
-
-    elif option == 'k':
-        stop_threads = True
         switch()
 
     else:
