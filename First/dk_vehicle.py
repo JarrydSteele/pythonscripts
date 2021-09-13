@@ -110,3 +110,5 @@ class DKVehicle(Vehicle):
     
     def set_frame_type(self,frame):
         self.vehicle.parameters['Q_FRAME_TYPE'] = frame
+    
+    
