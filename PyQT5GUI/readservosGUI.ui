@@ -1471,7 +1471,7 @@
      </item>
     </layout>
    </widget>
-   <widget class="QLabel" name="label_20">
+   <widget class="QLabel" name="lblStatus">
     <property name="geometry">
      <rect>
       <x>30</x>
