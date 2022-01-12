@@ -67,7 +67,10 @@ def ConnectPressed():
     print ('Connect Button Pressed')
     
     window.ui.btnConnect.setText("Connecting")
+    window.ui.lblStatus.setStyleSheet("background-color: rgb(255, 255, 0);\ncolor: rgb(0, 0, 0);")
 
+    
+    
 
     #connection = '/dev/radio1'       #'/dev/radio1' '/dev/pixhawk'
     if window.ui.cmbConnect.currentText() == "Pixhawk":
@@ -182,7 +185,25 @@ def DisconnectPressed():
     window.ui.horizontalSlider_15.setSliderPosition(0)
     window.ui.horizontalSlider_16.setSliderPosition(0)
 
+    window.ui.horizontalSlider_33.setSliderPosition(0)
+    window.ui.horizontalSlider_34.setSliderPosition(0)
+    window.ui.horizontalSlider_35.setSliderPosition(0)
+    window.ui.horizontalSlider_36.setSliderPosition(0)
+    window.ui.horizontalSlider_37.setSliderPosition(0)
+    window.ui.horizontalSlider_38.setSliderPosition(0)
+    window.ui.horizontalSlider_39.setSliderPosition(0)
+    window.ui.horizontalSlider_40.setSliderPosition(0)
+    window.ui.horizontalSlider_41.setSliderPosition(0)
+    window.ui.horizontalSlider_42.setSliderPosition(0)
+    window.ui.horizontalSlider_43.setSliderPosition(0)
+    window.ui.horizontalSlider_44.setSliderPosition(0)
+    window.ui.horizontalSlider_45.setSliderPosition(0)
+    window.ui.horizontalSlider_46.setSliderPosition(0)
+    window.ui.horizontalSlider_47.setSliderPosition(0)
+    window.ui.horizontalSlider_48.setSliderPosition(0)
+
     window.ui.btnConnect.setText("Connect")
+    window.ui.lblStatus.setStyleSheet("background-color: rgb(0, 255, 0);\ncolor: rgb(0, 0, 0);")
     
     vehicle.close()
 
@@ -222,6 +243,8 @@ def MakeDo():
     window.ui.horizontalSlider_46.setSliderPosition(random.randint(0,100))
     window.ui.horizontalSlider_47.setSliderPosition(random.randint(0,100))
     window.ui.horizontalSlider_48.setSliderPosition(random.randint(0,100))
+
+    window.ui.lblStatus.setStyleSheet("background-color: rgb(255, 0, 0);\ncolor: rgb(0, 0, 0);")
 
 def QuitProgram():
     # Shut down simulator
