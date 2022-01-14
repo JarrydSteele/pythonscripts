@@ -10,7 +10,7 @@
     <x>0</x>
     <y>0</y>
     <width>1000</width>
-    <height>800</height>
+    <height>760</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -22,13 +22,13 @@
   <property name="minimumSize">
    <size>
     <width>1000</width>
-    <height>800</height>
+    <height>760</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
     <width>1000</width>
-    <height>800</height>
+    <height>760</height>
    </size>
   </property>
   <property name="palette">
@@ -462,1071 +462,11 @@
    <property name="styleSheet">
     <string notr="true">color: rgb(71, 102, 181);</string>
    </property>
-   <widget class="QWidget" name="layoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>210</x>
-      <y>170</y>
-      <width>771</width>
-      <height>481</height>
-     </rect>
-    </property>
-    <layout class="QHBoxLayout" name="horizontalLayout">
-     <item>
-      <layout class="QVBoxLayout" name="verticalLayout_4">
-       <item>
-        <spacer name="verticalSpacer">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-         <property name="sizeType">
-          <enum>QSizePolicy::Fixed</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>20</width>
-           <height>36</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item>
-        <widget class="QLabel" name="label_3">
-         <property name="text">
-          <string>Channel 1</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="label_4">
-         <property name="text">
-          <string>Channel 2</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="label_5">
-         <property name="text">
-          <string>Channel 3</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="label_6">
-         <property name="text">
-          <string>Channel 4</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="label_7">
-         <property name="text">
-          <string>Channel 5</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="label_8">
-         <property name="text">
-          <string>Channel 6</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="label_9">
-         <property name="text">
-          <string>Channel 7</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="label_10">
-         <property name="text">
-          <string>Channel 8</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="label_11">
-         <property name="text">
-          <string>Channel 9</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="label_12">
-         <property name="text">
-          <string>Channel 10</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="label_13">
-         <property name="text">
-          <string>Channel 11</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="label_14">
-         <property name="text">
-          <string>Channel 12</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="label_15">
-         <property name="text">
-          <string>Channel 13</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="label_16">
-         <property name="text">
-          <string>Channel 14</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="label_17">
-         <property name="text">
-          <string>Channel 15</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="label_18">
-         <property name="text">
-          <string>Channel 16</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <spacer name="verticalSpacer_2">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-         <property name="sizeType">
-          <enum>QSizePolicy::Fixed</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>20</width>
-           <height>8</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <layout class="QVBoxLayout" name="verticalLayout">
-       <item>
-        <widget class="QLabel" name="label">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="font">
-          <font>
-           <pointsize>14</pointsize>
-           <weight>75</weight>
-           <bold>true</bold>
-          </font>
-         </property>
-         <property name="text">
-          <string>FC 1 Servo Outputs:</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QSlider" name="horizontalSlider_1">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="cursor">
-          <cursorShape>ForbiddenCursor</cursorShape>
-         </property>
-         <property name="acceptDrops">
-          <bool>false</bool>
-         </property>
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QSlider" name="horizontalSlider_2">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="cursor">
-          <cursorShape>ForbiddenCursor</cursorShape>
-         </property>
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QSlider" name="horizontalSlider_3">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="cursor">
-          <cursorShape>ForbiddenCursor</cursorShape>
-         </property>
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QSlider" name="horizontalSlider_4">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="cursor">
-          <cursorShape>ForbiddenCursor</cursorShape>
-         </property>
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QSlider" name="horizontalSlider_5">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="cursor">
-          <cursorShape>ForbiddenCursor</cursorShape>
-         </property>
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QSlider" name="horizontalSlider_6">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="cursor">
-          <cursorShape>ForbiddenCursor</cursorShape>
-         </property>
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QSlider" name="horizontalSlider_7">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="cursor">
-          <cursorShape>ForbiddenCursor</cursorShape>
-         </property>
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QSlider" name="horizontalSlider_8">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="cursor">
-          <cursorShape>ForbiddenCursor</cursorShape>
-         </property>
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QSlider" name="horizontalSlider_9">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="cursor">
-          <cursorShape>ForbiddenCursor</cursorShape>
-         </property>
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QSlider" name="horizontalSlider_10">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="cursor">
-          <cursorShape>ForbiddenCursor</cursorShape>
-         </property>
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QSlider" name="horizontalSlider_11">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="cursor">
-          <cursorShape>ForbiddenCursor</cursorShape>
-         </property>
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QSlider" name="horizontalSlider_12">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="cursor">
-          <cursorShape>ForbiddenCursor</cursorShape>
-         </property>
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QSlider" name="horizontalSlider_13">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="cursor">
-          <cursorShape>ForbiddenCursor</cursorShape>
-         </property>
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QSlider" name="horizontalSlider_14">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="cursor">
-          <cursorShape>ForbiddenCursor</cursorShape>
-         </property>
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QSlider" name="horizontalSlider_15">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="cursor">
-          <cursorShape>ForbiddenCursor</cursorShape>
-         </property>
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QSlider" name="horizontalSlider_16">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="cursor">
-          <cursorShape>ForbiddenCursor</cursorShape>
-         </property>
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <layout class="QVBoxLayout" name="verticalLayout_5">
-       <item>
-        <widget class="QLabel" name="label_19">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="font">
-          <font>
-           <pointsize>14</pointsize>
-           <weight>75</weight>
-           <bold>true</bold>
-          </font>
-         </property>
-         <property name="text">
-          <string>FC 2 Servo Outputs:</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QSlider" name="horizontalSlider_33">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="cursor">
-          <cursorShape>ForbiddenCursor</cursorShape>
-         </property>
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QSlider" name="horizontalSlider_34">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="cursor">
-          <cursorShape>ForbiddenCursor</cursorShape>
-         </property>
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QSlider" name="horizontalSlider_35">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="cursor">
-          <cursorShape>ForbiddenCursor</cursorShape>
-         </property>
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QSlider" name="horizontalSlider_36">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="cursor">
-          <cursorShape>ForbiddenCursor</cursorShape>
-         </property>
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QSlider" name="horizontalSlider_37">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="cursor">
-          <cursorShape>ForbiddenCursor</cursorShape>
-         </property>
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QSlider" name="horizontalSlider_38">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="cursor">
-          <cursorShape>ForbiddenCursor</cursorShape>
-         </property>
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QSlider" name="horizontalSlider_39">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="cursor">
-          <cursorShape>ForbiddenCursor</cursorShape>
-         </property>
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QSlider" name="horizontalSlider_40">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="cursor">
-          <cursorShape>ForbiddenCursor</cursorShape>
-         </property>
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QSlider" name="horizontalSlider_41">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="cursor">
-          <cursorShape>ForbiddenCursor</cursorShape>
-         </property>
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QSlider" name="horizontalSlider_42">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="cursor">
-          <cursorShape>ForbiddenCursor</cursorShape>
-         </property>
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QSlider" name="horizontalSlider_43">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="cursor">
-          <cursorShape>ForbiddenCursor</cursorShape>
-         </property>
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QSlider" name="horizontalSlider_44">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="cursor">
-          <cursorShape>ForbiddenCursor</cursorShape>
-         </property>
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QSlider" name="horizontalSlider_45">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="cursor">
-          <cursorShape>ForbiddenCursor</cursorShape>
-         </property>
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QSlider" name="horizontalSlider_46">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="cursor">
-          <cursorShape>ForbiddenCursor</cursorShape>
-         </property>
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QSlider" name="horizontalSlider_47">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="cursor">
-          <cursorShape>ForbiddenCursor</cursorShape>
-         </property>
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QSlider" name="horizontalSlider_48">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="cursor">
-          <cursorShape>ForbiddenCursor</cursorShape>
-         </property>
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <layout class="QVBoxLayout" name="verticalLayout_3">
-       <item>
-        <widget class="QLabel" name="label_2">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="font">
-          <font>
-           <pointsize>14</pointsize>
-           <weight>75</weight>
-           <bold>true</bold>
-          </font>
-         </property>
-         <property name="text">
-          <string>Sensor Inputs:</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QSlider" name="horizontalSlider_17">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="cursor">
-          <cursorShape>ForbiddenCursor</cursorShape>
-         </property>
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QSlider" name="horizontalSlider_18">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="cursor">
-          <cursorShape>ForbiddenCursor</cursorShape>
-         </property>
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QSlider" name="horizontalSlider_19">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="cursor">
-          <cursorShape>ForbiddenCursor</cursorShape>
-         </property>
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QSlider" name="horizontalSlider_20">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="cursor">
-          <cursorShape>ForbiddenCursor</cursorShape>
-         </property>
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QSlider" name="horizontalSlider_21">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="cursor">
-          <cursorShape>ForbiddenCursor</cursorShape>
-         </property>
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QSlider" name="horizontalSlider_22">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="cursor">
-          <cursorShape>ForbiddenCursor</cursorShape>
-         </property>
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QSlider" name="horizontalSlider_23">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="cursor">
-          <cursorShape>ForbiddenCursor</cursorShape>
-         </property>
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QSlider" name="horizontalSlider_24">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="cursor">
-          <cursorShape>ForbiddenCursor</cursorShape>
-         </property>
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QSlider" name="horizontalSlider_25">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="cursor">
-          <cursorShape>ForbiddenCursor</cursorShape>
-         </property>
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QSlider" name="horizontalSlider_26">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="cursor">
-          <cursorShape>ForbiddenCursor</cursorShape>
-         </property>
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QSlider" name="horizontalSlider_27">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="cursor">
-          <cursorShape>ForbiddenCursor</cursorShape>
-         </property>
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QSlider" name="horizontalSlider_28">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="cursor">
-          <cursorShape>ForbiddenCursor</cursorShape>
-         </property>
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QSlider" name="horizontalSlider_29">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="cursor">
-          <cursorShape>ForbiddenCursor</cursorShape>
-         </property>
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QSlider" name="horizontalSlider_30">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="cursor">
-          <cursorShape>ForbiddenCursor</cursorShape>
-         </property>
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QSlider" name="horizontalSlider_31">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="cursor">
-          <cursorShape>ForbiddenCursor</cursorShape>
-         </property>
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QSlider" name="horizontalSlider_32">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="cursor">
-          <cursorShape>ForbiddenCursor</cursorShape>
-         </property>
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QWidget" name="verticalLayoutWidget_2">
-    <property name="geometry">
-     <rect>
-      <x>30</x>
-      <y>170</y>
-      <width>160</width>
-      <height>381</height>
-     </rect>
-    </property>
-    <layout class="QVBoxLayout" name="verticalLayout_7">
-     <item>
-      <layout class="QVBoxLayout" name="verticalLayout_2">
-       <item>
-        <widget class="QComboBox" name="cmbConnect">
-         <item>
-          <property name="text">
-           <string>Pixhawk</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Radio1</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Radio2</string>
-          </property>
-         </item>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="btnConnect">
-         <property name="autoFillBackground">
-          <bool>false</bool>
-         </property>
-         <property name="text">
-          <string>Connect</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="btnDisconnect">
-         <property name="autoFillBackground">
-          <bool>false</bool>
-         </property>
-         <property name="text">
-          <string>Disconnect</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="btnMakeDo">
-         <property name="text">
-          <string>Make Do</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="btnQuit">
-         <property name="text">
-          <string>Quit</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <spacer name="verticalSpacer_4">
-       <property name="orientation">
-        <enum>Qt::Vertical</enum>
-       </property>
-       <property name="sizeType">
-        <enum>QSizePolicy::Maximum</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>20</width>
-         <height>40</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-     <item>
-      <layout class="QVBoxLayout" name="verticalLayout_6">
-       <item>
-        <widget class="QPushButton" name="btnFM2">
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>40</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>Guided</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="btnFM1">
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>40</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>RTL</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="btnFM3">
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>40</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>Circle</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="btnFM4">
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>40</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>Loiter</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QLabel" name="lblStatus">
-    <property name="geometry">
-     <rect>
-      <x>30</x>
-      <y>560</y>
-      <width>161</width>
-      <height>101</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>40</pointsize>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(0, 255, 0);
-color: rgb(0, 0, 0);</string>
-    </property>
-    <property name="text">
-     <string>Status</string>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignCenter</set>
-    </property>
-   </widget>
-   <widget class="QLabel" name="lblMessage">
-    <property name="geometry">
-     <rect>
-      <x>30</x>
-      <y>670</y>
-      <width>951</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Message:</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="lblMessage2">
-    <property name="geometry">
-     <rect>
-      <x>30</x>
-      <y>690</y>
-      <width>951</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
    <widget class="QLabel" name="label_21">
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>40</y>
+      <y>10</y>
       <width>951</width>
       <height>71</height>
      </rect>
@@ -1544,6 +484,1181 @@ color: rgb(0, 0, 0);</string>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
     </property>
+   </widget>
+   <widget class="QGroupBox" name="groupBox">
+    <property name="geometry">
+     <rect>
+      <x>9</x>
+      <y>670</y>
+      <width>981</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Message:</string>
+    </property>
+    <widget class="QLabel" name="lblMessage">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>961</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Plain</enum>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_2">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>100</y>
+      <width>791</width>
+      <height>561</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Outputs:</string>
+    </property>
+    <widget class="QWidget" name="layoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>771</width>
+       <height>531</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_4">
+        <item>
+         <spacer name="verticalSpacer">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Fixed</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>36</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_3">
+          <property name="text">
+           <string>Channel 1</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_4">
+          <property name="text">
+           <string>Channel 2</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_5">
+          <property name="text">
+           <string>Channel 3</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_6">
+          <property name="text">
+           <string>Channel 4</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_7">
+          <property name="text">
+           <string>Channel 5</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_8">
+          <property name="text">
+           <string>Channel 6</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_9">
+          <property name="text">
+           <string>Channel 7</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_10">
+          <property name="text">
+           <string>Channel 8</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_11">
+          <property name="text">
+           <string>Channel 9</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_12">
+          <property name="text">
+           <string>Channel 10</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_13">
+          <property name="text">
+           <string>Channel 11</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_14">
+          <property name="text">
+           <string>Channel 12</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_15">
+          <property name="text">
+           <string>Channel 13</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_16">
+          <property name="text">
+           <string>Channel 14</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_17">
+          <property name="text">
+           <string>Channel 15</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_18">
+          <property name="text">
+           <string>Channel 16</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="verticalSpacer_2">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Fixed</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>8</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+         <widget class="QLabel" name="label">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>14</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>FC 1 Servo Outputs:</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSlider" name="horizontalSlider_1">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="cursor">
+           <cursorShape>ForbiddenCursor</cursorShape>
+          </property>
+          <property name="acceptDrops">
+           <bool>false</bool>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSlider" name="horizontalSlider_2">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="cursor">
+           <cursorShape>ForbiddenCursor</cursorShape>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSlider" name="horizontalSlider_3">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="cursor">
+           <cursorShape>ForbiddenCursor</cursorShape>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSlider" name="horizontalSlider_4">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="cursor">
+           <cursorShape>ForbiddenCursor</cursorShape>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSlider" name="horizontalSlider_5">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="cursor">
+           <cursorShape>ForbiddenCursor</cursorShape>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSlider" name="horizontalSlider_6">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="cursor">
+           <cursorShape>ForbiddenCursor</cursorShape>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSlider" name="horizontalSlider_7">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="cursor">
+           <cursorShape>ForbiddenCursor</cursorShape>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSlider" name="horizontalSlider_8">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="cursor">
+           <cursorShape>ForbiddenCursor</cursorShape>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSlider" name="horizontalSlider_9">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="cursor">
+           <cursorShape>ForbiddenCursor</cursorShape>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSlider" name="horizontalSlider_10">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="cursor">
+           <cursorShape>ForbiddenCursor</cursorShape>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSlider" name="horizontalSlider_11">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="cursor">
+           <cursorShape>ForbiddenCursor</cursorShape>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSlider" name="horizontalSlider_12">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="cursor">
+           <cursorShape>ForbiddenCursor</cursorShape>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSlider" name="horizontalSlider_13">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="cursor">
+           <cursorShape>ForbiddenCursor</cursorShape>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSlider" name="horizontalSlider_14">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="cursor">
+           <cursorShape>ForbiddenCursor</cursorShape>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSlider" name="horizontalSlider_15">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="cursor">
+           <cursorShape>ForbiddenCursor</cursorShape>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSlider" name="horizontalSlider_16">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="cursor">
+           <cursorShape>ForbiddenCursor</cursorShape>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_5">
+        <item>
+         <widget class="QLabel" name="label_19">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>14</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>FC 2 Servo Outputs:</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSlider" name="horizontalSlider_33">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="cursor">
+           <cursorShape>ForbiddenCursor</cursorShape>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSlider" name="horizontalSlider_34">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="cursor">
+           <cursorShape>ForbiddenCursor</cursorShape>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSlider" name="horizontalSlider_35">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="cursor">
+           <cursorShape>ForbiddenCursor</cursorShape>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSlider" name="horizontalSlider_36">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="cursor">
+           <cursorShape>ForbiddenCursor</cursorShape>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSlider" name="horizontalSlider_37">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="cursor">
+           <cursorShape>ForbiddenCursor</cursorShape>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSlider" name="horizontalSlider_38">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="cursor">
+           <cursorShape>ForbiddenCursor</cursorShape>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSlider" name="horizontalSlider_39">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="cursor">
+           <cursorShape>ForbiddenCursor</cursorShape>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSlider" name="horizontalSlider_40">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="cursor">
+           <cursorShape>ForbiddenCursor</cursorShape>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSlider" name="horizontalSlider_41">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="cursor">
+           <cursorShape>ForbiddenCursor</cursorShape>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSlider" name="horizontalSlider_42">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="cursor">
+           <cursorShape>ForbiddenCursor</cursorShape>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSlider" name="horizontalSlider_43">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="cursor">
+           <cursorShape>ForbiddenCursor</cursorShape>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSlider" name="horizontalSlider_44">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="cursor">
+           <cursorShape>ForbiddenCursor</cursorShape>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSlider" name="horizontalSlider_45">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="cursor">
+           <cursorShape>ForbiddenCursor</cursorShape>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSlider" name="horizontalSlider_46">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="cursor">
+           <cursorShape>ForbiddenCursor</cursorShape>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSlider" name="horizontalSlider_47">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="cursor">
+           <cursorShape>ForbiddenCursor</cursorShape>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSlider" name="horizontalSlider_48">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="cursor">
+           <cursorShape>ForbiddenCursor</cursorShape>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_3">
+        <item>
+         <widget class="QLabel" name="label_2">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>14</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>Sensor Inputs:</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSlider" name="horizontalSlider_17">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="cursor">
+           <cursorShape>ForbiddenCursor</cursorShape>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSlider" name="horizontalSlider_18">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="cursor">
+           <cursorShape>ForbiddenCursor</cursorShape>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSlider" name="horizontalSlider_19">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="cursor">
+           <cursorShape>ForbiddenCursor</cursorShape>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSlider" name="horizontalSlider_20">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="cursor">
+           <cursorShape>ForbiddenCursor</cursorShape>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSlider" name="horizontalSlider_21">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="cursor">
+           <cursorShape>ForbiddenCursor</cursorShape>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSlider" name="horizontalSlider_22">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="cursor">
+           <cursorShape>ForbiddenCursor</cursorShape>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSlider" name="horizontalSlider_23">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="cursor">
+           <cursorShape>ForbiddenCursor</cursorShape>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSlider" name="horizontalSlider_24">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="cursor">
+           <cursorShape>ForbiddenCursor</cursorShape>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSlider" name="horizontalSlider_25">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="cursor">
+           <cursorShape>ForbiddenCursor</cursorShape>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSlider" name="horizontalSlider_26">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="cursor">
+           <cursorShape>ForbiddenCursor</cursorShape>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSlider" name="horizontalSlider_27">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="cursor">
+           <cursorShape>ForbiddenCursor</cursorShape>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSlider" name="horizontalSlider_28">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="cursor">
+           <cursorShape>ForbiddenCursor</cursorShape>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSlider" name="horizontalSlider_29">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="cursor">
+           <cursorShape>ForbiddenCursor</cursorShape>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSlider" name="horizontalSlider_30">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="cursor">
+           <cursorShape>ForbiddenCursor</cursorShape>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSlider" name="horizontalSlider_31">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="cursor">
+           <cursorShape>ForbiddenCursor</cursorShape>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSlider" name="horizontalSlider_32">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="cursor">
+           <cursorShape>ForbiddenCursor</cursorShape>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_3">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>100</y>
+      <width>181</width>
+      <height>351</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Controls</string>
+    </property>
+    <widget class="QWidget" name="verticalLayoutWidget_2">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>160</width>
+       <height>321</height>
+      </rect>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_7">
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <widget class="QComboBox" name="cmbConnect">
+          <item>
+           <property name="text">
+            <string>Pixhawk</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Radio1</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Radio2</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnConnect">
+          <property name="autoFillBackground">
+           <bool>false</bool>
+          </property>
+          <property name="text">
+           <string>Connect</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnDisconnect">
+          <property name="autoFillBackground">
+           <bool>false</bool>
+          </property>
+          <property name="text">
+           <string>Disconnect</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnMakeDo">
+          <property name="text">
+           <string>Make Do</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnQuit">
+          <property name="text">
+           <string>Quit</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <spacer name="verticalSpacer_4">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Maximum</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_6">
+        <item>
+         <widget class="QPushButton" name="btnFM2">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>35</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Guided</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnFM1">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>35</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>RTL</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnFM3">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>35</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Circle</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnFM4">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>35</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Loiter</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_4">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>460</y>
+      <width>181</width>
+      <height>201</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>GroupBox</string>
+    </property>
+    <widget class="QLabel" name="lblStatus">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>161</width>
+       <height>91</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>40</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(0, 255, 0);
+color: rgb(0, 0, 0);</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::Box</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <property name="text">
+      <string>Status</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lblArm">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>120</y>
+       <width>161</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>18</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0, 0, 0);</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::Box</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <property name="text">
+      <string>Disarmed</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lblFM">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>160</y>
+       <width>161</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>18</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0, 0, 0);</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::Box</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <property name="text">
+      <string>Stabilized</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
    </widget>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
