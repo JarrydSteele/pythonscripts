@@ -202,6 +202,23 @@ def DisconnectPressed():
     window.ui.horizontalSlider_47.setSliderPosition(0)
     window.ui.horizontalSlider_48.setSliderPosition(0)
 
+    window.ui.horizontalSlider_17.setSliderPosition(0)
+    window.ui.horizontalSlider_18.setSliderPosition(0)
+    window.ui.horizontalSlider_19.setSliderPosition(0)
+    window.ui.horizontalSlider_20.setSliderPosition(0)
+    window.ui.horizontalSlider_21.setSliderPosition(0)
+    window.ui.horizontalSlider_22.setSliderPosition(0)
+    window.ui.horizontalSlider_23.setSliderPosition(0)
+    window.ui.horizontalSlider_24.setSliderPosition(0)
+    window.ui.horizontalSlider_25.setSliderPosition(0)
+    window.ui.horizontalSlider_26.setSliderPosition(0)
+    window.ui.horizontalSlider_27.setSliderPosition(0)
+    window.ui.horizontalSlider_28.setSliderPosition(0)
+    window.ui.horizontalSlider_29.setSliderPosition(0)
+    window.ui.horizontalSlider_30.setSliderPosition(0)
+    window.ui.horizontalSlider_31.setSliderPosition(0)
+    window.ui.horizontalSlider_32.setSliderPosition(0)
+
     window.ui.btnConnect.setText("Connect")
     window.ui.lblStatus.setStyleSheet("background-color: rgb(0, 255, 0);\ncolor: rgb(0, 0, 0);")
     
@@ -227,6 +244,7 @@ def MakeDo():
     window.ui.horizontalSlider_14.setSliderPosition(random.randint(0,100))
     window.ui.horizontalSlider_15.setSliderPosition(random.randint(0,100))
     window.ui.horizontalSlider_16.setSliderPosition(random.randint(0,100))
+    
     window.ui.horizontalSlider_33.setSliderPosition(random.randint(0,100))
     window.ui.horizontalSlider_34.setSliderPosition(random.randint(0,100))
     window.ui.horizontalSlider_35.setSliderPosition(random.randint(0,100))
@@ -243,6 +261,24 @@ def MakeDo():
     window.ui.horizontalSlider_46.setSliderPosition(random.randint(0,100))
     window.ui.horizontalSlider_47.setSliderPosition(random.randint(0,100))
     window.ui.horizontalSlider_48.setSliderPosition(random.randint(0,100))
+    
+    window.ui.horizontalSlider_17.setSliderPosition(random.randint(0,100))
+    window.ui.horizontalSlider_18.setSliderPosition(random.randint(0,100))
+    window.ui.horizontalSlider_19.setSliderPosition(random.randint(0,100))
+    window.ui.horizontalSlider_20.setSliderPosition(random.randint(0,100))
+    window.ui.horizontalSlider_21.setSliderPosition(random.randint(0,100))
+    window.ui.horizontalSlider_22.setSliderPosition(random.randint(0,100))
+    window.ui.horizontalSlider_23.setSliderPosition(random.randint(0,100))
+    window.ui.horizontalSlider_24.setSliderPosition(random.randint(0,100))
+    window.ui.horizontalSlider_25.setSliderPosition(random.randint(0,100))
+    window.ui.horizontalSlider_26.setSliderPosition(random.randint(0,100))
+    window.ui.horizontalSlider_27.setSliderPosition(random.randint(0,100))
+    window.ui.horizontalSlider_28.setSliderPosition(random.randint(0,100))
+    window.ui.horizontalSlider_29.setSliderPosition(random.randint(0,100))
+    window.ui.horizontalSlider_30.setSliderPosition(random.randint(0,100))
+    window.ui.horizontalSlider_31.setSliderPosition(random.randint(0,100))
+    window.ui.horizontalSlider_32.setSliderPosition(random.randint(0,100))
+
 
     window.ui.lblStatus.setStyleSheet("background-color: rgb(255, 0, 0);\ncolor: rgb(0, 0, 0);")
 
