@@ -81,7 +81,7 @@ def get_teensy_serial():                                            # get serial
         
         s = teensy.readline().decode().strip()
         int_s = int(teensy.readline().decode().strip())
-        
+
         #print(int_s)
         if stop_threads:
             print("stop_threads = true")
