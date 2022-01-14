@@ -1,11 +1,14 @@
+from curses import baudrate
 from threading import Thread
 import serial, time
 
-stop_threads = False   
+stop_threads = False
+global out
+out = ''   
 
 print("Connecting to Telemetry Radio")
 try:
-    telem = serial.Serial('/dev/ttyUSB0')                            # open serial port
+    telem = serial.Serial(port='/dev/ttyUSB0', baudrate=57600, timeout=10)                            # open serial port
     print("Connected to Telemetry Radio ")                            # check which port was really used
 except:
     print("Could not connect to Telemetry Radio")
@@ -15,10 +18,16 @@ def get_telem_serial():                                            # get serial 
         global s
         global int_s
         global stop_threads
-        
-        s = telem.readline().decode().strip()
-        int_s = int(telem.readline().decode().strip())
+        global out
+    
+        #r = telem.read().decode().strip()
+        #print(r)
+
+        s = telem.readline()
+        print(s.decode('utf-8').strip())
+        #int_s = int(telem.read().decode().strip())
         #print(int_s)
+
         if stop_threads:
             print("stop_threads = true")
             break
@@ -33,9 +42,9 @@ def switch():
     option = input("Enter your option ('e' to exit): ")
 
     if option == 'e':
-        print("Closing Vehicles and Exiting Program")
+        print("Exiting Program")
         telem.close()
-        time.sleep(2)
+        time.sleep(1)
         return
 
     elif option == 'kill':
@@ -45,8 +54,6 @@ def switch():
         telem_serial_thread.join()
         switch()
     
-
- 
     else:
         print("Incorrect option")
         switch()
