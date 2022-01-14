@@ -18,6 +18,9 @@ stop_threads = False                                                # variable u
 fc_1 = DKVehicle('/dev/pixhawk4.1')                                 # initialise dronekit vehicle 1
 fc_2 = DKVehicle('/dev/pixhawk4.2')                                 # initialise dronekit vehicle 1
 
+pv_1 = PhysicalVehicle()
+
+
 print("Connecting to Teensy")
 try:
     teensy = serial.Serial('/dev/teensy4.1')                            # open serial port
@@ -78,6 +81,7 @@ def get_teensy_serial():                                            # get serial
         
         s = teensy.readline().decode().strip()
         int_s = int(teensy.readline().decode().strip())
+        
         #print(int_s)
         if stop_threads:
             print("stop_threads = true")
