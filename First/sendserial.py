@@ -13,7 +13,7 @@ connected = False
 
 print("Connecting to Telemetry Radio")
 try:
-    telem = serial.Serial(port='/dev/ttyUSB1',baudrate=57600,timeout=1)                            # open serial port
+    telem = serial.Serial(port='/dev/ttyUSB0',baudrate=57600,timeout=1)                            # open serial port
     print("Connected to Telemetry Radio ")                            # check which port was really used
     connected = True
 except:

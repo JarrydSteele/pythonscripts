@@ -1,12 +1,27 @@
-from pickletools import long1
-import string
-from tokenize import Double
 import serial, time
 from threading import Thread
 from physical_vehicle import PhysicalVehicle
 
 pv_1 = PhysicalVehicle()
 stop_threads = False
+
+connected = False
+
+global telem_send_time
+
+telem_send_period = 500000000
+telem_send_time = time.time_ns() + telem_send_period
+
+global s
+s = ""
+
+print("Connecting to Telemetry Radio")
+try:
+    telem = serial.Serial(port='/dev/ttyUSB0',baudrate=57600,timeout=1)                            # open serial port
+    print("Connected to Telemetry Radio ")                            # check which port was really used
+    connected = True
+except:
+    print("Could not connect to Telemetry Radio")
 
 print("Connecting to Teensy")
 try:
@@ -18,7 +33,6 @@ except:
 def get_teensy_serial():                                            # get serial data from teensy
     while(True):
         global s
-        global int_s
         global stop_threads
         
         s = teensy.readline().decode().strip()
@@ -45,13 +59,44 @@ def get_teensy_serial():                                            # get serial
         pv_1.gps_speed_kmph = float(data[19])
         pv_1.gps_numsats = float(data[20].strip(", "))
 
-        pv_1.print_stats()
+        #pv_1.print_stats()
 
         if stop_threads:
             print("stop_threads = true")
             break
 
-#global teensy_serial_thread
+def send_telem_serial():                                            # send serial data from teensy
+    while(True):
+
+        global stop_threads
+        global s
+        global telem_send_time
+
+        if time.time_ns() > telem_send_time:
+            data = s + "\n"
+            encoded_data = data.encode('utf-8')
+
+            if (connected):
+                telem.write(encoded_data)
+                print("Sent: %s" % data)
+            else:
+                print("Telem not connected")
+
+            telem_send_time = time.time_ns() + telem_send_period
+
+        #time.sleep(0.1)
+
+        if stop_threads:
+            print("stop_threads = true")
+            break
+
+#global telem_serial_thread
+telem_serial_thread = Thread(target=send_telem_serial, args=())
+telem_serial_thread.daemon = True
+telem_serial_thread.start()
+
+
+
 teensy_serial_thread = Thread(target=get_teensy_serial, args=())
 teensy_serial_thread.daemon = True
 teensy_serial_thread.start()
@@ -62,7 +107,7 @@ def switch():
 
     if option == 'e':
         print("Exiting Program")
-        teensy.close()
+        telem.close()
         time.sleep(1)
         return
 
@@ -70,9 +115,11 @@ def switch():
         print("Stopping all threads")
         global stop_threads
         stop_threads = True
-        teensy_serial_thread.join()
+        telem_serial_thread.join()
         switch()
     
+
+ 
     else:
         print("Incorrect option")
         switch()
