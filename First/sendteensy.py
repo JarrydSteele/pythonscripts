@@ -6,18 +6,14 @@ pv_1 = PhysicalVehicle()
 stop_threads = False
 
 connected = False
-
-global telem_send_time
-
-telem_send_period = 500000000
-telem_send_time = time.time_ns() + telem_send_period
+newdata = False
 
 global s
 s = ""
 
 print("Connecting to Telemetry Radio")
 try:
-    telem = serial.Serial(port='/dev/ttyUSB0',baudrate=57600,timeout=1)                            # open serial port
+    telem = serial.Serial(port='/dev/ttyUSB0',baudrate=57600,timeout=5)                            # open serial port
     print("Connected to Telemetry Radio ")                            # check which port was really used
     connected = True
 except:
@@ -25,7 +21,7 @@ except:
 
 print("Connecting to Teensy")
 try:
-    teensy = serial.Serial('/dev/teensy4.1')                            # open serial port
+    teensy = serial.Serial(port='/dev/teensy4.1',baudrate=115200)                            # open serial port
     print("Connected to: %s " % teensy.name)                            # check which port was really used
 except:
     print("Could not connect to Teensy")
@@ -34,9 +30,13 @@ def get_teensy_serial():                                            # get serial
     while(True):
         global s
         global stop_threads
+        global newdata
         
+
         s = teensy.readline().decode().strip()
-        #print(s)
+        newdata = True
+        print("Rcvd: %s" % s)
+        teensy.flushInput()
 
         data = s.split(', ')
 
@@ -67,35 +67,31 @@ def get_teensy_serial():                                            # get serial
 
 def send_telem_serial():                                            # send serial data from teensy
     while(True):
+        x = 1
+        # global stop_threads
+        # global s
+        # global newdata
 
-        global stop_threads
-        global s
-        global telem_send_time
+        # if newdata:
+        #     data = s + "\n"
+        #     encoded_data = data.encode('utf-8')
 
-        if time.time_ns() > telem_send_time:
-            data = s + "\n"
-            encoded_data = data.encode('utf-8')
+        #     if (connected):
+        #         telem.write(encoded_data)
+        #         print("Sent: %s" % data)
+                
+        #     else:
+        #         print("Telem not connected")
+            
+        #     newdata = False
 
-            if (connected):
-                telem.write(encoded_data)
-                print("Sent: %s" % data)
-            else:
-                print("Telem not connected")
+        # if stop_threads:
+        #     print("stop_threads = true")
+        #     break
 
-            telem_send_time = time.time_ns() + telem_send_period
-
-        #time.sleep(0.1)
-
-        if stop_threads:
-            print("stop_threads = true")
-            break
-
-#global telem_serial_thread
 telem_serial_thread = Thread(target=send_telem_serial, args=())
 telem_serial_thread.daemon = True
 telem_serial_thread.start()
-
-
 
 teensy_serial_thread = Thread(target=get_teensy_serial, args=())
 teensy_serial_thread.daemon = True
